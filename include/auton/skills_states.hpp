@@ -88,69 +88,54 @@ void skills_states() {
     pros::delay(300);
     arm.moveToState(ArmNamespace::State::DOWN);
     
+    //after second alliance stake
+
     conveyor.moveToState(ConveyorNamespace::State::FORWARDS);
     chassis.turnToPoint(24, -24, 1000,{}, false);
     chassis.moveToPoint(24, -24, 1000, {}, false);
 
+    chassis.waitUntil(24);
+
+    chassis.turnToPoint(0, 0, 1000, {}, false);
+
+    chassis.moveToPoint(-48, 48, 1000, {}, false);
+
+    chassis.turnAndMoveToPoint(-60, 48, 1000, {}, false);
     
-    // chassis.turnToPoint(65,-26, 700, {.forwards = false},false);
+    chassis.turnAndMoveToPoint(-48, 60, 1000, {}, false);
+
+    chassis.turnToHeading(90, 1000, {}, false);
+
+    chassis.moveDistance(-10, 1000, {.forwards = false}, false);
+
+    arm.moveToState(ArmNamespace::State::WAIT);
+
+    chassis.moveToPoint(-24, 48, 1000, {}, false);
+
+    conveyor.moveToState(ConveyorNamespace::State::STOP);
+
+    chassis.turnToPoint(-48, 24, 1000, {.forwards = false}, false);
+
+    chassis.moveToPoint(-48, 24, 1000, {.forwards = false}, false);
+
+    chassis.moveDistance(-3, 1000, {.forwards = false}, false);
+
+    holder.moveToState(HolderNamespace::State::HOLD);
+
     
-    // chassis.moveDistance(-36, 1200, {.forwards = false, .maxSpeed = 80}, true);
-    // chassis.waitUntil(28);
-    // holder.moveToState(HolderNamespace::State::HOLD);
+
+
+
+
+
+
+
+
+
+    
+
+    
    
-
-    // chassis.turnToHeading(335, 1000, {}, false);
-    // holder.moveToState(HolderNamespace::State::RELEASE);
-    // chassis.moveDistance(-34, 1000, {.forwards = false}, false);
-
-    // chassis.correctAt0({"right"});
-
-    // chassis.moveDistance(48, 1000, {}, false);
-
-    // arm.moveToState(ArmNamespace::State::WAIT);
-    // conveyor.moveToState(ConveyorNamespace::State::FORWARDS);
-
-    // chassis.turnToHeading(180, 1000, {}, false);
-    // chassis.correctAt180({"left"});
-    // chassis.moveToPoint(48, 0, 1000, {.forwards = false, .maxSpeed = 80}, true);
-    // chassis.waitUntil(15);
-    // holder.moveToState(HolderNamespace::State::HOLD);
-    // chassis.turnToHeading(90, 1000, {}, false);
-    // chassis.moveDistance(24, 1000, {.maxSpeed = 60}, false);
-    // chassis.moveDistance( -20, 1000, {.forwards = false, .maxSpeed = 60}, false);
-    // chassis.moveDistance(12, 1000, {.maxSpeed = 60}, false);
-
-    //second part
-    
-    // arm.moveToState(ArmNamespace::State::UP);
-    // chassis.moveDistance(-10, 1000, {}, false);
-    // arm.moveToState(ArmNamespace::State::DOWN);
-    
-    // chassis.turnToHeading(180, 1000, {}, false);
-    // chassis.moveToPoint(48, 0, 1000, {.forwards = false}, false);
-    // holder.moveToState(HolderNamespace::State::HOLD);
-    
-
-    // chassis.turnAndMoveToPoint(24, -24, 1000, {},false); 
-    // chassis.turnToPoint(0, 0, 1000, {}, false);
-    // chassis.waitUntilDone();
-
-    // chassis.moveToPoint(-48, -48, 1000, {}, false);
-    
-
-    // chassis.turnAndMoveToPoint(- 48,-60, 1000, {}, false);
-
-    // chassis.turnAndMoveToPoint(- 60, -48, 1000, {}, false);
-
-    // chassis.turnToHeading(90, 1000, {}, false);
-
-    // holder.moveToState(HolderNamespace::State::HOLD);
-
-    // chassis.moveDistance(-10, 1000, {.forwards = false}, false);
-
-    // arm.moveToState(ArmNamespace::State::WAIT);
-
     
 
 
